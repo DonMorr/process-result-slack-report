@@ -59,7 +59,12 @@ else:
 
 #response += ' - time taken: ' + str(resource.getrusage(resource.RUSAGE_CHILDREN))
 
-response += ' - time taken: ' + "%.2f" % (timeEnd - timeStart) + ' seconds'
+durationS = (timeEnd - timeStart)
+m,s = divmod(durationS, 60)
+h,m = divmod(m, 60)
+elapsedTime = "%d:%02d:%02d" % (h,m,s)
+
+response += ' - time taken: ' + elapsedTime
 
 payload['text']=response
 
