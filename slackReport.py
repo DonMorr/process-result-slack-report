@@ -31,8 +31,11 @@ print('Executing command: ' + args.command)
 # Time the process
 timeStart = time.time()
 
-p = subprocess.Popen(args.command, stdout=subprocess.PIPE, shell=True)
-(output, err) = p.communicate()
+p = subprocess.Popen(args.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+#(output, err) = p.communicate()
+while p.poll() is None:
+	print p.stdout.readline().strip()
+
 p_status = p.wait()
 
 timeEnd = time.time()
