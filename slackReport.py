@@ -40,7 +40,6 @@ p_status = p.wait()
 
 timeEnd = time.time()
 
-print "Command output : \n", output
 print "Command exit status/return code : ", p_status
 
 response = 'Command \'' +args.command+ '\' ' 
