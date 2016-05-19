@@ -17,3 +17,7 @@ Message posted in slack channel:
 ```
 Command 'sudo ./b2 install' successful - time taken: 4935.06 seconds
 ```
+
+##### Required Packages
+Python 2 &  python-requests
+
